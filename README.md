@@ -88,9 +88,7 @@ User → FastAPI → Pipeline → [Generation → Screening → Ranking] × Roun
 **Scoring**: `Score = QED - (0.1 × violations)`  
 **Multi-round**: Top molecules become seeds for next round  
 
-## Time: ~2 days
 
-Built as take-home assignment for Backend Engineer position.
 ```
 
 ---
