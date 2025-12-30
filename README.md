@@ -44,21 +44,19 @@ curl http://localhost:8000/runs/{run_id}/results
 
 ## Features
 
-✅ **3 Agents**: Planner (implicit), Generator, Ranker  
-✅ **RDKit**: Molecular property calculation  
-✅ **Screening**: Lipinski-like rules  
-✅ **Scoring**: QED - 0.1 × violations  
-✅ **Async**: Non-blocking execution  
-✅ **Multi-round**: Iterative improvement  
+ *3 Agents**: Planner (implicit), Generator, Ranker  
+ **RDKit**: Molecular property calculation  
+ **Screening**: Lipinski-like rules  
+ **Scoring**: QED - 0.1 × violations  
+ **Async**: Non-blocking execution  
+ **Multi-round**: Iterative improvement  
 
 ## Architecture
-```
 User → FastAPI → Pipeline → [Generation → Screening → Ranking] × Rounds → Results
                                   ↓
                                RDKit (MW, LogP, HBD, HBA, TPSA, RotB, QED)
                                   ↓
                                SQLite
-```
 
 ## Endpoints
 
@@ -88,10 +86,6 @@ User → FastAPI → Pipeline → [Generation → Screening → Ranking] × Roun
 **Scoring**: `Score = QED - (0.1 × violations)`  
 **Multi-round**: Top molecules become seeds for next round  
 
-
-```
-
----
 
 ## 📄 FILE 4: requirements.txt
 ```
